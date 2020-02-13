@@ -12,6 +12,14 @@ function startVideo(){
     err = console.log(err)
     
     )
-
-    startVideo();
 }
+
+startVideo(); 
+
+    Promise.all([
+        faceapi.nets.tinyFaceDector.loadFromUri('/models'),
+        faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+        faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
+        faceapi.nets.faceExpressionNet.loadFromUri('/models'),
+        faceapi.nets.ageGenderNet.loadFromUri('/models'),
+    ])
